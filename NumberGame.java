@@ -29,6 +29,7 @@ public class NumberGame{
              System.out.println("Guess a number between 1 and 100.");
              guess = inn.nextInt();
              games++;
+             attempt = 5;
 
              
            }
@@ -57,8 +58,10 @@ public class NumberGame{
              System.out.println("Guess a number between 1 and 100.");
              guess = inn.nextInt();
              games++;
+             attempt = 5;
              
           }
-        }   
+        }
+        System.out.println("Here is your score board\nGames: " + games + " games played\nWins: "+ score + " games won!\n GAME OVER!!!");   
     }
 }
