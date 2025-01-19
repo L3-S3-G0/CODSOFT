@@ -24,13 +24,16 @@ public class NumberGame{
              score++;
              play = inn.next().toLowerCase();
              
-             if (play.equals("no")){ break;}
-             
-             System.out.println("Guess a number between 1 and 100.");
+             if (play.equals("yes")){
+               System.out.println("Great!!!\nGuess a number between 1 and 100.");
              guess = inn.nextInt();
              games++;
              attempt = 5;
-
+             }
+             
+             else{
+                break;
+             }
              
            }
            
@@ -53,15 +56,18 @@ public class NumberGame{
              play = inn.next();
              play.toLowerCase(); 
              
-             if (play.equals("no")){ break;}
-            
-             System.out.println("Guess a number between 1 and 100.");
+             if (play.equals("yes")){
+               System.out.println("Great!!!\nGuess a number between 1 and 100.");
              guess = inn.nextInt();
              games++;
              attempt = 5;
+             }
              
+             else{
+                break;
+             } 
           }
         }
-        System.out.println("Here is your score board\nGames: " + games + " games played\nWins: "+ score + " games won!\n GAME OVER!!!");   
+        System.out.println("Here is your score board\nGames: " + games + " game\\s played\nWins: "+ score + " games won!\n GAME OVER!!!");   
     }
 }
