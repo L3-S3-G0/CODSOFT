@@ -7,7 +7,7 @@ public class NumberGame{
         int guess;
         int score = 0;
         int games = 1;
-        int attempt = 5;
+        int attempt = 4;
         String play;
         Random rand = new Random();
         int num = rand.nextInt(101);
@@ -18,9 +18,10 @@ public class NumberGame{
 
         
         guess = inn.nextInt();
-        attempt--;
-        
+                
         while(true){
+           attempt--;
+
            if( guess == num){
              System.out.println("Congratulations. You have guessed correctly\nWould you like to play again? (Yes or No)");
              score++;
@@ -31,7 +32,7 @@ public class NumberGame{
                System.out.println("Great!!!\nGuess a number between 0 and 100.");
                guess = inn.nextInt();
                games++;
-               attempt = 5;
+               attempt = 4;
              }
              
              else{
@@ -41,13 +42,13 @@ public class NumberGame{
            }
            
            else if (guess > num){
-             attempt--;
+             //attempt--;
              System.out.println("Your guess is too big.");
              System.out.println("Guess a number between 0 and 100: ");
              guess = inn.nextInt();
            }
            else{
-             attempt--;
+             //attempt--;
              System.out.println("Your guess is too small.");
              System.out.println("Guess a number between 0 and 100: ");
              guess = inn.nextInt();
@@ -64,7 +65,7 @@ public class NumberGame{
                System.out.println("Great!!!\nGuess a number between 0 and 100.");
                guess = inn.nextInt();
                games++;
-               attempt = 5;
+               attempt = 4;
              }
              
              else{
