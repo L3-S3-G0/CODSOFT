@@ -68,6 +68,6 @@ public class NumberGame{
              } 
           }
         }
-        System.out.println("Here is your score board\nGames: " + games + " game\\s played\nWins: "+ score + " games won!\n GAME OVER!!!");   
+        System.out.println("Here is your score board\nGames: " + games + " game\\s played\nWins: "+ score + " game\\s won!\n GAME OVER!!!");   
     }
 }
