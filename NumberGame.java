@@ -8,7 +8,6 @@ public class NumberGame{
         int games = 1;
         int attempt = 5;
         int num = 44;
-        boolean state = true;
         String play;
 
         System.out.println("Let's play a number game!");
@@ -19,13 +18,13 @@ public class NumberGame{
         guess = inn.nextInt();
         attempt--;
         
-        while(state){
+        while(true){
            if( guess == num){
              System.out.println("Congratulations. You have guessed correctly\nWould you like to play again? (Yes or No)");
              score++;
-             play = inn.nextLine().toLowerCase();
+             play = inn.next().toLowerCase();
              
-             if (play.equals("no")){state = false; break;}
+             if (play.equals("no")){ break;}
              
              System.out.println("Guess a number between 1 and 100.");
              guess = inn.nextInt();
@@ -53,14 +52,12 @@ public class NumberGame{
              play = inn.next();
              play.toLowerCase(); 
              
-             if (play.equals("no")){state = false; break;}
-             
-             else{
-             
+             if (play.equals("no")){ break;}
+            
              System.out.println("Guess a number between 1 and 100.");
              guess = inn.nextInt();
              games++;
-             }
+             
           }
         }   
     }
