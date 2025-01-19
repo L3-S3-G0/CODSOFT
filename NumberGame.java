@@ -17,31 +17,51 @@ public class NumberGame{
 
         
         guess = inn.nextInt();
+        attempt--;
         
         while(state){
            if( guess == num){
-             System.out.println("Congratulations. You have guessed correctly");
+             System.out.println("Congratulations. You have guessed correctly\nWould you like to play again? (Yes or No)");
              score++;
+             play = inn.nextLine().toLowerCase();
+             
+             if (play.equals("no")){state = false; break;}
+             
+             System.out.println("Guess a number between 1 and 100.");
+             guess = inn.nextInt();
+             games++;
+
+             
            }
+           
            else if (guess > num){
              attempt--;
              System.out.println("Your guess is too big.");
              System.out.println("Guess a number between 1 and 100: ");
+             guess = inn.nextInt();
            }
            else{
              attempt--;
              System.out.println("Your guess is too small.");
              System.out.println("Guess a number between 1 and 100: ");
+             guess = inn.nextInt();
 
            }
            
            if (attempt == 0){
              System.out.println("You have run out of attempts.\nWould you like to play again? (Yes or No)");
-             play = inn.nextLine().toLowerCase();
+             play = inn.next();
+             play.toLowerCase(); 
              
              if (play.equals("no")){state = false; break;}
+             
+             else{
+             
              System.out.println("Guess a number between 1 and 100.");
-       
+             guess = inn.nextInt();
+             games++;
+             }
+          }
         }   
     }
 }
