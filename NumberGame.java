@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class NumberGame{
     public static void main(String[] args) {
@@ -7,12 +8,13 @@ public class NumberGame{
         int score = 0;
         int games = 1;
         int attempt = 5;
-        int num = 44;
         String play;
+        Random rand = new Random();
+        int num = rand.nextInt(101);
 
         System.out.println("Let's play a number game!");
         System.out.println("You have 5 attempts to guess the number.");
-        System.out.println("Guess a number between 1 and 100: ");
+        System.out.println("Guess a number between 0 and 100: ");
 
         
         guess = inn.nextInt();
@@ -25,10 +27,11 @@ public class NumberGame{
              play = inn.next().toLowerCase();
              
              if (play.equals("yes")){
-               System.out.println("Great!!!\nGuess a number between 1 and 100.");
-             guess = inn.nextInt();
-             games++;
-             attempt = 5;
+               num = rand.nextInt(101);
+               System.out.println("Great!!!\nGuess a number between 0 and 100.");
+               guess = inn.nextInt();
+               games++;
+               attempt = 5;
              }
              
              else{
@@ -40,27 +43,28 @@ public class NumberGame{
            else if (guess > num){
              attempt--;
              System.out.println("Your guess is too big.");
-             System.out.println("Guess a number between 1 and 100: ");
+             System.out.println("Guess a number between 0 and 100: ");
              guess = inn.nextInt();
            }
            else{
              attempt--;
              System.out.println("Your guess is too small.");
-             System.out.println("Guess a number between 1 and 100: ");
+             System.out.println("Guess a number between 0 and 100: ");
              guess = inn.nextInt();
 
            }
            
            if (attempt == 0){
-             System.out.println("You have run out of attempts.\nWould you like to play again? (Yes or No)");
+             System.out.println("You have run out of attempts.\nYour random number was: " + num + "\nWould you like to play again? (Yes or No)");
              play = inn.next();
              play.toLowerCase(); 
              
              if (play.equals("yes")){
-               System.out.println("Great!!!\nGuess a number between 1 and 100.");
-             guess = inn.nextInt();
-             games++;
-             attempt = 5;
+               num = rand.nextInt(101);
+               System.out.println("Great!!!\nGuess a number between 0 and 100.");
+               guess = inn.nextInt();
+               games++;
+               attempt = 5;
              }
              
              else{
