@@ -13,6 +13,10 @@ public class Report{
   marks.add(mark);
  }
  
+ public int getSize(){
+  return marks.size();
+ }
+ 
  public int totalMarks(){
   int total = 0;
   for (int i : marks){
@@ -20,6 +24,13 @@ public class Report{
   }
   
   return total;
+ }
+ 
+ public int averageMarks(){
+  int totalMarks = this.totalMarks();
+  int numberOfSubjects = this.getSize();
+  
+  return (totalMarks/numberOfSubjects);
  }
 
 
