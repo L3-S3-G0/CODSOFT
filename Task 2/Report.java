@@ -35,9 +35,16 @@ public class Report{
   return (totalMarks/numberOfSubjects);
  }
  
- private void grade(int mark){
+ private String grade(int mark){
   String grade = grades[(mark/10)];
-  System.out.println(grade);
+  return grade;
+ }
+ 
+ public void displayResults(){
+  System.out.println("Your results are as follows:\n");
+  System.out.println("Total Marks: " + totalMarks());
+  System.out.println("Average Percentage: " + averageMarks());
+  System.out.println("Grade: " + grade(averageMarks()));
  }
  
 }
